@@ -1,0 +1,16 @@
+.div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.icon {
+  width: 60%;
+  height: auto;
+}
+.title {
+  color: coral;
+  font-size: 50px;
+}

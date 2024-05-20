@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import s from './ContactForm.module.css';
 
 import { useDispatch } from 'react-redux';
-import { addContactThunk } from '../../redux/contactsOps';
+import { addContactThunk } from '../../redux/contacts/contactsOps';
 
 const initialValues = { name: '', number: '' };
 const reg = /^\d{3}-?\d{2}-?\d{2}$/;

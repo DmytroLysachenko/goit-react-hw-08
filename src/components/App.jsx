@@ -1,28 +1,42 @@
-import { useEffect } from 'react';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { SearchBox } from './SearchBox/SearchBox';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from '../pages/Home/Home';
+import { Layout } from './Layout/Layout';
+import { LoginForm } from './LoginForm/LoginForm';
+import { RegForm } from './RegForm/RegForm';
+import { Contacts } from '../pages/Contacts/Contacts';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContactsThunk } from '../redux/contactsOps';
-import s from './App.module.css';
-import { selectError, selectLoading } from '../redux/selectors';
-import { Error } from './Error/Error';
-import { Loading } from './Loading/Loading';
+import { selectIsRefreshing } from '../redux/auth/selectors';
+import { useEffect } from 'react';
+import { refreshUser } from '../redux/auth/operations';
+
 export const App = () => {
   const dispatch = useDispatch();
+  const { isRefreshing } = useSelector(selectIsRefreshing);
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(refreshUser());
   }, [dispatch]);
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
-  return (
-    <div className={s.div}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      {error && <Error />}
-      {loading && <Loading />}
-      {!error && !loading && <ContactList />}
-    </div>
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <Layout>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/register"
+          element={<RegForm />}
+        />
+        <Route
+          path="/login"
+          element={<LoginForm />}
+        />
+        <Route
+          path="/contacts"
+          element={<Contacts />}
+        />
+      </Routes>
+    </Layout>
   );
 };
