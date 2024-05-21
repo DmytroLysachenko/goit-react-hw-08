@@ -4,7 +4,7 @@
   align-items: center;
   list-style-type: none;
   border: solid black 1px;
-  width: fit-content;
+  width: 200px;
   border-radius: 10px;
   padding: 10px;
 }
@@ -21,6 +21,7 @@
   gap: 10px;
 }
 .text {
+  display: block;
   padding-left: 20px;
   position: relative;
   margin: 0;
