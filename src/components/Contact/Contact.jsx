@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import {
   addCurrentContact,
   openConfirmModal,
-} from '../../redux/contacts/contactsSlice';
+} from '../../redux/contacts/slice';
 
 export const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();

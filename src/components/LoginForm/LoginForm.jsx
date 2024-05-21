@@ -1,7 +1,8 @@
 import { Field, Form, Formik } from 'formik';
 import s from './LoginForm.module.css';
-import { logInThunk } from '../../redux/auth/operations';
+
 import { useDispatch } from 'react-redux';
+import { logInThunk } from '../../redux/auth/operations';
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const initialValues = {

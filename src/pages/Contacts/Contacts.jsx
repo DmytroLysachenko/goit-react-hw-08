@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContactsThunk } from '../../redux/contacts/contactsOps';
+
 import {
   selectConfirmModal,
   selectError,
@@ -13,6 +13,7 @@ import { Loading } from '../../components/Loading/Loading';
 import { ContactList } from '../../components/ContactList/ContactList';
 import s from './Contacts.module.css';
 import { ConfirmModal } from '../../components/ConfirmModal/ConfirmModal';
+import { fetchContactsThunk } from '../../redux/contacts/operations';
 
 const Contacts = () => {
   const dispatch = useDispatch();

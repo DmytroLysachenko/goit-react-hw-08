@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { closeConfirmModal } from '../../redux/contacts/contactsSlice';
+
 import { RxCross2 } from 'react-icons/rx';
 import s from './ConfirmModal.module.css';
 import toast from 'react-hot-toast';
-import { deleteContactThunk } from '../../redux/contacts/contactsOps';
+
 import { selectConfirmModal } from '../../redux/contacts/selectors';
+import { closeConfirmModal } from '../../redux/contacts/slice';
+import { deleteContactThunk } from '../../redux/contacts/operations';
 export const ConfirmModal = () => {
   const dispatch = useDispatch();
   const { id } = useSelector(selectConfirmModal);

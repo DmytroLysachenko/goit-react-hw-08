@@ -4,7 +4,7 @@ import {
   deleteContactThunk,
   editContactThunk,
   fetchContactsThunk,
-} from './contactsOps';
+} from './operations';
 
 const initialState = {
   contacts: {
@@ -42,7 +42,6 @@ const contactsSlice = createSlice({
       })
       .addCase(editContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.map((x) => {
-          console.log(x.id === payload.id);
           return x.id === payload.id ? payload : x;
         });
         state.contacts.currentContact = null;

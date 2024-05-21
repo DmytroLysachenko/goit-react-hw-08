@@ -4,10 +4,12 @@ import * as Yup from 'yup';
 import s from './EditForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
-import { editContactThunk } from '../../redux/contacts/contactsOps';
+
 import { selectCurrentContact } from '../../redux/contacts/selectors';
-import { addCurrentContact } from '../../redux/contacts/contactsSlice';
+
 import { RxCross2 } from 'react-icons/rx';
+import { editContactThunk } from '../../redux/contacts/operations';
+import { addCurrentContact } from '../../redux/contacts/slice';
 
 const initialValues = { name: '', number: '' };
 const reg = /^\d{3}-?\d{2}-?\d{2}$/;
