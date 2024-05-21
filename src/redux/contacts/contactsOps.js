@@ -25,6 +25,17 @@ export const addContactThunk = createAsyncThunk(
     }
   }
 );
+export const editContactThunk = createAsyncThunk(
+  'contacts/editContact',
+  async ({ id, name, number }, thunkAPI) => {
+    try {
+      const { data } = await heroAPI.patch(`/contacts/${id}`, { name, number });
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 
 export const deleteContactThunk = createAsyncThunk(
   'contacts/deleteContact',

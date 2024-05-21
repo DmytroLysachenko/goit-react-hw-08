@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import s from './RefForm.module.css';
 import { Link } from 'react-router-dom';
-import { register } from '../../redux/auth/operations';
+import { registerThunk } from '../../redux/auth/operations';
 import { useDispatch } from 'react-redux';
 export const RegForm = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export const RegForm = () => {
     password: '',
   };
   const handleSubmit = ({ name, email, password }, actions) => {
-    dispatch(register({ name, email, password }));
+    dispatch(registerThunk({ name, email, password }));
     actions.resetForm(initialValues);
   };
   return (

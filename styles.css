@@ -138,3 +138,6 @@ q:after {
   content: '';
   content: none;
 }
+body {
+  background-color: whitesmoke;
+}

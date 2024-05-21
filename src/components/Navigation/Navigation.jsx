@@ -5,7 +5,7 @@ import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import clsx from 'clsx';
 
 export const Navigation = () => {
-  const { isLoggedIn } = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const buildLinkClass = ({ isActive }) => {
     return clsx(s.link, isActive && s.active);
   };

@@ -6,6 +6,7 @@ import s from './ContactForm.module.css';
 
 import { useDispatch } from 'react-redux';
 import { addContactThunk } from '../../redux/contacts/contactsOps';
+import toast from 'react-hot-toast';
 
 const initialValues = { name: '', number: '' };
 const reg = /^\d{3}-?\d{2}-?\d{2}$/;
@@ -26,6 +27,7 @@ export const ContactForm = () => {
   const numberId = useId();
   const handleSubmit = (values, actions) => {
     dispatch(addContactThunk({ ...values }));
+    toast.success('Successfully created!');
     actions.resetForm();
   };
 

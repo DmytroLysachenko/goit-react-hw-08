@@ -13,7 +13,7 @@ export const SearchBox = () => {
   return (
     <div className={s.wrapper}>
       <label className={s.label}>
-        Find contacts by name:
+        Find contacts by name / tel number:
         <input
           onChange={handleChange}
           type="text"

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   addContactThunk,
   deleteContactThunk,
+  editContactThunk,
   fetchContactsThunk,
 } from './contactsOps';
 
@@ -10,17 +11,24 @@ const initialState = {
     items: [],
     loading: false,
     error: null,
+    currentContact: null,
+    confirmModal: { state: false, id: null },
   },
 };
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
   reducers: {
-    addContact: (state, { payload }) => {
-      state.contacts.push(payload);
+    addCurrentContact(state, { payload }) {
+      state.contacts.currentContact = payload;
     },
-    deleteContact: (state, { payload }) => {
-      state.contacts = state.contacts.filter((x) => x.id !== payload);
+    openConfirmModal(state, { payload }) {
+      state.contacts.confirmModal.state = true;
+      state.contacts.confirmModal.id = payload;
+    },
+    closeConfirmModal(state) {
+      state.contacts.confirmModal.state = false;
+      state.contacts.confirmModal.id = null;
     },
   },
   extraReducers: (builder) => {
@@ -31,6 +39,13 @@ const contactsSlice = createSlice({
       })
       .addCase(addContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items.push(payload);
+      })
+      .addCase(editContactThunk.fulfilled, (state, { payload }) => {
+        state.contacts.items = state.contacts.items.map((x) => {
+          console.log(x.id === payload.id);
+          return x.id === payload.id ? payload : x;
+        });
+        state.contacts.currentContact = null;
       })
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.filter(
@@ -63,4 +78,5 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-export const { addContact, deleteContact } = contactsSlice.actions;
+export const { addCurrentContact, openConfirmModal, closeConfirmModal } =
+  contactsSlice.actions;

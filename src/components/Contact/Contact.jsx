@@ -2,10 +2,14 @@ import { IoPerson } from 'react-icons/io5';
 import { FaPhoneAlt } from 'react-icons/fa';
 import s from './Contact.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from '../../redux/contacts/contactsOps';
+import {
+  addCurrentContact,
+  openConfirmModal,
+} from '../../redux/contacts/contactsSlice';
 
 export const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+
   return (
     <li className={s.item}>
       <div className={s.wrapper}>
@@ -16,12 +20,26 @@ export const Contact = ({ name, number, id }) => {
           <FaPhoneAlt className={s.icon} /> {number}
         </p>
       </div>
-      <button
-        onClick={() => dispatch(deleteContactThunk(id))}
-        className={s.button}
-      >
-        Delete
-      </button>
+      <div className={s.buttonsWrap}>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(openConfirmModal(id));
+          }}
+          className={s.button}
+        >
+          Delete
+        </button>
+        <button
+          className={s.button}
+          type="button"
+          onClick={() => {
+            dispatch(addCurrentContact({ name, number, id }));
+          }}
+        >
+          Edit
+        </button>
+      </div>
     </li>
   );
 };
