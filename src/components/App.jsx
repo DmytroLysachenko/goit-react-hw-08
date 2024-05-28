@@ -10,6 +10,7 @@ import { selectCurrentContact } from '../redux/contacts/selectors';
 import { EditForm } from './EditForm/EditForm';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { PublicRoute } from './PublicRoute/PublicRoute';
+import { NotFound } from '../pages/NotFound/NotFound';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/RegisterPage'));
@@ -56,6 +57,10 @@ export const App = () => {
           <Route
             path="/contacts"
             element={<PrivateRoute component={<Contacts />} />}
+          />
+          <Route
+            path="*"
+            element={<NotFound />}
           />
         </Routes>
       </Layout>
