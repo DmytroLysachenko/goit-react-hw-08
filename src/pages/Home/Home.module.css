@@ -1,16 +1,23 @@
 .div {
+  min-height: calc(100vh - 76px);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  background-color: rgba(89, 108, 252, 0.66);
+  background-image: linear-gradient(
+    0deg,
+    rgba(89, 108, 252, 0.66) 41%,
+    rgba(135, 52, 142, 0.44) 65%
+  );
 }
 .icon {
   width: 40%;
   height: auto;
 }
 .title {
-  color: coral;
-  font-size: 50px;
+  color: whitesmoke;
+  font-size: 40px;
 }

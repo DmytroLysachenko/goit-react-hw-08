@@ -15,7 +15,7 @@ export const RegForm = () => {
     actions.resetForm(initialValues);
   };
   return (
-    <>
+    <div className={s.wrapper}>
       <h3 className={s.title}>Registration Form</h3>
       <Formik
         initialValues={initialValues}
@@ -52,6 +52,6 @@ export const RegForm = () => {
           </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };

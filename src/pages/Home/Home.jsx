@@ -4,8 +4,11 @@ import s from './Home.module.css';
 const Home = () => {
   return (
     <div className={s.div}>
-      <FaHouse className={s.icon} />
-      <h3 className={s.title}>Home page</h3>
+      <h3 className={s.title}>Welcome Home!</h3>
+      <FaHouse
+        className={s.icon}
+        color="whitesmoke"
+      />
     </div>
   );
 };

@@ -14,7 +14,7 @@ export const LoginForm = () => {
     actions.resetForm(initialValues);
   };
   return (
-    <>
+    <div className={s.wrapper}>
       <h3 className={s.title}>Login Form</h3>
       <Formik
         initialValues={initialValues}
@@ -43,6 +43,6 @@ export const LoginForm = () => {
           </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
