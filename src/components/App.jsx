@@ -30,7 +30,7 @@ export const App = () => {
     <>
       {currentContact && <EditForm />}
       <Layout>
-        <Toaster />
+        <Toaster position="top-center" />
         <Routes>
           <Route
             path="/"

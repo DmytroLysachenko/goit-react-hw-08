@@ -1,10 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   registerThunk,
   refreshUserThunk,
   logOutThunk,
   logInThunk,
 } from './operations';
+import toast from 'react-hot-toast';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -23,16 +24,19 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        toast.success('You have your own account now!');
       })
       .addCase(logInThunk.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        toast.success('You are logged in now!');
       })
       .addCase(logOutThunk.fulfilled, (state) => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
+        toast.success('You are logged out now!');
       })
       .addCase(refreshUserThunk.pending, (state) => {
         state.isRefreshing = true;
@@ -44,7 +48,17 @@ const authSlice = createSlice({
       })
       .addCase(refreshUserThunk.rejected, (state) => {
         state.isRefreshing = false;
-      });
+      })
+      .addMatcher(
+        isAnyOf(
+          registerThunk.rejected,
+          logInThunk.rejected,
+          logOutThunk.rejected
+        ),
+        (state) => {
+          toast.error('Something went wrong, try again!');
+        }
+      );
   },
 });
 

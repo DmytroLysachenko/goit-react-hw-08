@@ -5,6 +5,7 @@ import {
   editContactThunk,
   fetchContactsThunk,
 } from './operations';
+import toast from 'react-hot-toast';
 
 const initialState = {
   contacts: {
@@ -39,17 +40,20 @@ const contactsSlice = createSlice({
       })
       .addCase(addContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items.push(payload);
+        toast.success('Successfully added!');
       })
       .addCase(editContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.map((x) => {
           return x.id === payload.id ? payload : x;
         });
         state.contacts.currentContact = null;
+        toast.success('Successfully edited!');
       })
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.filter(
           (contact) => contact.id !== payload
         );
+        toast.success('Successfully deleted!');
       })
 
       .addMatcher(
