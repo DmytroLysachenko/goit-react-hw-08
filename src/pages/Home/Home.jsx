@@ -7,7 +7,7 @@ const Home = () => {
       <h3 className={s.title}>Welcome Home!</h3>
       <FaHouse
         className={s.icon}
-        color="whitesmoke"
+        color="coral"
       />
     </div>
   );
