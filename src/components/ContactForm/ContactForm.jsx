@@ -1,12 +1,8 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
 import * as Yup from 'yup';
-
 import s from './ContactForm.module.css';
-
 import { useDispatch } from 'react-redux';
-
-import toast from 'react-hot-toast';
 import { addContactThunk } from '../../redux/contacts/operations';
 
 const initialValues = { name: '', number: '' };

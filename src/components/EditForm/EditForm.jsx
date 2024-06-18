@@ -3,7 +3,6 @@ import { useId } from 'react';
 import * as Yup from 'yup';
 import s from './EditForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import toast from 'react-hot-toast';
 
 import { selectCurrentContact } from '../../redux/contacts/selectors';
 
