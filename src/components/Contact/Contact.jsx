@@ -22,15 +22,6 @@ export const Contact = ({ name, number, id }) => {
       </div>
       <div className={s.buttonsWrap}>
         <button
-          type="button"
-          onClick={() => {
-            dispatch(openConfirmModal(id));
-          }}
-          className={s.button}
-        >
-          Delete
-        </button>
-        <button
           className={s.button}
           type="button"
           onClick={() => {
@@ -38,6 +29,15 @@ export const Contact = ({ name, number, id }) => {
           }}
         >
           Edit
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(openConfirmModal(id));
+          }}
+          className={s.button}
+        >
+          Delete
         </button>
       </div>
     </li>

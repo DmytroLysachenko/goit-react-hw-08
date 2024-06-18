@@ -23,6 +23,7 @@
     "imask": "^7.6.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
+    "modern-normalize": "^2.0.0",
     "nanoid": "^5.0.7",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",

@@ -1,11 +1,20 @@
 .div {
-  min-height: calc(100vh - 76px);
+  max-height: calc(100vh - 76px);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 40px;
 }
 .title {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-size: xx-large;
+  text-align: center;
+}
+.subtitle {
+  font-size: larger;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contacts_div {
+  width: 100%;
 }

@@ -27,13 +27,18 @@ const Contacts = () => {
   return (
     <>
       {modal.state && <ConfirmModal />}
+      <h1 className={s.title}>Phonebook</h1>
       <div className={s.div}>
-        <h1 className={s.title}>Phonebook</h1>
-        <ContactForm />
-        <SearchBox />
-        {error && <Error />}
-        {loading && <Loading />}
-        {!error && !loading && <ContactList />}
+        <div>
+          <h2 className={s.subtitle}>Add contact Form</h2>
+          <ContactForm />
+        </div>
+        <div className={s.contacts_div}>
+          <SearchBox />
+          {error && <Error />}
+          {loading && <Loading />}
+          {!error && !loading && <ContactList />}
+        </div>
       </div>
     </>
   );

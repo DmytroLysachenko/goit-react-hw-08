@@ -26,7 +26,6 @@ export const ConfirmModal = () => {
           className={s.button}
           onClick={() => {
             dispatch(deleteContactThunk(id));
-            toast.success('Successfully deleted!');
             dispatch(closeConfirmModal());
           }}
         >

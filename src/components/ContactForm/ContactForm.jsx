@@ -28,7 +28,7 @@ export const ContactForm = () => {
   const numberId = useId();
   const handleSubmit = (values, actions) => {
     dispatch(addContactThunk({ ...values }));
-    toast.success('Successfully created!');
+
     actions.resetForm();
   };
 

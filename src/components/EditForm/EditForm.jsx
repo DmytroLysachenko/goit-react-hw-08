@@ -32,7 +32,6 @@ export const EditForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(editContactThunk({ ...values, id: contact.id }));
     actions.resetForm();
-    toast.success('Successfully edited');
   };
 
   return (

@@ -1,3 +1,5 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
 html,
 body,
 div,
@@ -120,7 +122,6 @@ table {
 }
 
 body {
-  font-family: 'Arvo', serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -128,6 +129,13 @@ body {
   letter-spacing: 0.32px;
   background-color: #fff;
 }
+input::placeholder {
+  font-family: inherit;
+}
+button {
+  font-family: inherit;
+}
+
 blockquote,
 q {
   quotes: none;
