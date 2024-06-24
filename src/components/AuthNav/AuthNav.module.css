@@ -1,11 +1,15 @@
 .list {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
   padding: 10px;
 }
 .link {
   display: flex;
-  background-color: rgba(72, 119, 190, 0.685);
+  font-size: x-large;
+  color: white;
+  background-color: rgba(210, 127, 235, 0.548);
   padding: 10px 10px;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
@@ -15,5 +19,5 @@
   }
 }
 .active {
-  background-color: rgb(209, 127, 235);
+  background-color: rgba(210, 127, 235, 0.836);
 }

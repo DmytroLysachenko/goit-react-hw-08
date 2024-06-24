@@ -1,7 +1,16 @@
 .header {
-  position: sticky;
   padding: 10px 5px;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(167, 176, 248, 0.911);
+  background-image: linear-gradient(
+    90deg,
+    #3d85e2,
+    #985ec2,
+    #e25fad,
+    #ff738d,
+    #ff9a6f,
+    #ffc95f,
+    #f9f871
+  );
+  box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
 }

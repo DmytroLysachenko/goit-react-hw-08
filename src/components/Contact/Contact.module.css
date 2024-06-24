@@ -11,8 +11,7 @@
   background-color: rgb(247, 247, 216);
 }
 .button {
-  height: fit-content;
-  width: 57px;
+  width: 70px;
   padding: 5px 10px;
   border-radius: 5px;
   transition: all 200ms ease-in-out;

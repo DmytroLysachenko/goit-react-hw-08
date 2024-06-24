@@ -1,14 +1,14 @@
 .div {
-  max-height: calc(100vh - 76px);
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
 .title {
-  margin-top: 30px;
+  padding-top: 30px;
   margin-bottom: 60px;
-  font-size: xx-large;
+  font-size: 40px;
   text-align: center;
+  font-weight: 500;
 }
 .subtitle {
   font-size: larger;
@@ -16,5 +16,12 @@
   text-align: center;
 }
 .contacts_div {
-  width: 100%;
+  width: 70%;
+}
+.form_div {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  flex-direction: column;
 }

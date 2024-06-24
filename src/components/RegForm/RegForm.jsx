@@ -27,12 +27,14 @@ export const RegForm = () => {
             name="name"
             className={s.input}
             required
+            placeholder="John Johnson"
             id="outlined-basic"
           />
           <label htmlFor="email">Email:</label>
           <Field
             name="email"
             type="email"
+            placeholder="example@mail.com"
             className={s.input}
             required
           />
@@ -40,10 +42,16 @@ export const RegForm = () => {
           <Field
             name="password"
             type="password"
+            placeholder="password"
             className={s.input}
             required
           />
-          <Link to="/login">Already have account?</Link>
+          <Link
+            className={s.link}
+            to="/login"
+          >
+            Already have account?
+          </Link>
           <button
             type="submit"
             className={s.button}

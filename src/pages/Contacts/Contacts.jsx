@@ -25,11 +25,11 @@ const Contacts = () => {
   const modal = useSelector(selectConfirmModal);
 
   return (
-    <>
+    <div className={s.general_div}>
       {modal.state && <ConfirmModal />}
-      <h1 className={s.title}>Phonebook</h1>
+      <h1 className={s.title}>Your phonebook</h1>
       <div className={s.div}>
-        <div>
+        <div className={s.form_div}>
           <h2 className={s.subtitle}>Add contact Form</h2>
           <ContactForm />
         </div>
@@ -40,7 +40,7 @@ const Contacts = () => {
           {!error && !loading && <ContactList />}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

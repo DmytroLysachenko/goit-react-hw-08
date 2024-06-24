@@ -26,12 +26,14 @@ export const LoginForm = () => {
             name="email"
             type="email"
             className={s.input}
+            placeholder="example@mail.com"
             required
           />
           <label htmlFor="password">Password:</label>
           <Field
             name="password"
             type="password"
+            placeholder="password"
             className={s.input}
             required
           />
@@ -39,7 +41,7 @@ export const LoginForm = () => {
             type="submit"
             className={s.button}
           >
-            Login
+            Log in
           </button>
         </Form>
       </Formik>

@@ -6,9 +6,7 @@ export const Layout = ({ children }) => {
   return (
     <>
       <AppBar />
-      <div className={s.wrapper}>
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-      </div>
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </>
   );
 };

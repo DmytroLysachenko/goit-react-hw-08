@@ -12,7 +12,7 @@ export const SearchBox = () => {
     dispatch(setFilter(e.target.value.trim().toLowerCase()));
   };
   return (
-    <div className={s.wrapper}>
+    <>
       <label className={s.label}>
         Find contacts by name / tel number:
         <input
@@ -22,6 +22,6 @@ export const SearchBox = () => {
           value={filter}
         />
       </label>
-    </div>
+    </>
   );
 };

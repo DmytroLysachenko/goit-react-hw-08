@@ -8,8 +8,6 @@ export const Loading = () => {
         width="80"
         color="aqua"
         ariaLabel="circles-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
         visible={true}
       />
     </div>
