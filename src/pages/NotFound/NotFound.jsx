@@ -4,6 +4,7 @@ export const NotFound = () => {
   return (
     <div className={s.div}>
       <img
+        width="60%"
         src={img}
         alt="Not Found"
       />

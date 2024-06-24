@@ -1,5 +1,5 @@
 .div {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 100px);
   padding: 0 20px;
   display: flex;
   justify-content: center;
