@@ -1,4 +1,3 @@
-import { FaHouse } from 'react-icons/fa6';
 import s from './Home.module.css';
 import { GiNotebook } from 'react-icons/gi';
 const Home = () => {
